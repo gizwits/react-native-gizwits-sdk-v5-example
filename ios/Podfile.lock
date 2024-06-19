@@ -11,7 +11,7 @@ PODS:
     - React-jsi (= 0.72.5)
     - ReactCommon/turbomodule/core (= 0.72.5)
   - fmt (6.2.1)
-  - GizwitsiOSSDK (1.4.5):
+  - GizwitsiOSSDK (1.5.2):
     - CryptoSwift (~> 1.8.0)
   - glog (0.3.5)
   - hermes-engine (0.72.5):
@@ -318,9 +318,9 @@ PODS:
   - React-jsinspector (0.72.5)
   - React-logger (0.72.5):
     - glog
-  - react-native-gizwits-sdk-v5 (1.4.31):
+  - react-native-gizwits-sdk-v5 (1.4.36):
     - CryptoSwift (~> 1.8.0)
-    - GizwitsiOSSDK (~> 1.4.5)
+    - GizwitsiOSSDK (~> 1.5.2)
     - React
   - react-native-netinfo (11.0.0):
     - React-Core
@@ -631,7 +631,7 @@ SPEC CHECKSUMS:
   FBLazyVector: 71803c074f6325f10b5ec891c443b6bbabef0ca7
   FBReactNativeSpec: 448e08a759d29a96e15725ae532445bf4343567c
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  GizwitsiOSSDK: 5712e3d78c20bbdbef789f7956f6f6fb14858e70
+  GizwitsiOSSDK: 4f0d1425a627e96a884f87c480a27d2baec19a94
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: f6cf92a471053245614d9d8097736f6337d5b86c
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
@@ -650,7 +650,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: ff70a72027dea5cc7d71cfcc6fad7f599f63987a
   React-jsinspector: aef73cbd43b70675f572214d10fa438c89bf11ba
   React-logger: 2e4aee3e11b3ec4fa6cfd8004610bbb3b8d6cca4
-  react-native-gizwits-sdk-v5: a1b5623ab94eb5e38ad0e14c4da58ae8220d8cf4
+  react-native-gizwits-sdk-v5: 2e7d6dbbee00aeb4fd321495375987ba8d87324f
   react-native-netinfo: 5ddbf20865bcffab6b43d0e4e1fd8b3896beb898
   react-native-safe-area-context: 7aa8e6d9d0f3100a820efb1a98af68aa747f9284
   react-native-slider: 1cdd6ba29675df21f30544253bf7351d3c2d68c4

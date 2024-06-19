@@ -20,6 +20,9 @@ import SelectDevice from './pages/Config/SelectDevice';
 import ConfigLoading from './pages/Config/ConfigLoading';
 import Login from './pages/My/Login';
 import Register from './pages/My/Register';
+import Forgot from './pages/My/Forgot';
+import UserDetail from './pages/My/UserDetail';
+import ChangePassword from './pages/My/ChangePassword';
 
 LogBox.ignoreLogs([
   "lace the following in 'screenOptions' in your code to keep current",
@@ -64,6 +67,9 @@ const MyStackScreen = () => (
     <Stack.Screen name="我的" component={My} />
     <Stack.Screen name="登录" component={Login} />
     <Stack.Screen name="注册" component={Register} />
+    <Stack.Screen name="忘记密码" component={Forgot} />
+    <Stack.Screen name="用户详情" component={UserDetail} />
+    <Stack.Screen name="修改密码" component={ChangePassword} />
   </Stack.Navigator>
 );
 function MyTabs() {

@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
   box: {
   }
 });
-const options = [{label: '账号注册', value: 0}, {label: '手机邮箱注册', value: 1}]
 
 
 export default observer(({navigation}: any) => {
@@ -26,24 +25,19 @@ export default observer(({navigation}: any) => {
 
     const getCode = useCallback(async () => {
         if (isValidEmail(username)) {
-            const data = await RNGizUserManagerModule.sendEmailRegisterVerifyCode(username)
-            console.log('sendEmailRegisterVerifyCode', data)
+            const data = await RNGizUserManagerModule.sendEmailForgotPasswordVerifyCode(username)
+            console.log('sendEmailForgotPasswordVerifyCode', data)
         } else {
-            const data = await RNGizUserManagerModule.sendMobileRegisterVerifyCode('',username)
-            console.log('sendMobileRegisterVerifyCode', data)
+            const data = await RNGizUserManagerModule.sendMobileForgotPasswordVerifyCode('',username)
+            console.log('sendMobileForgotPasswordVerifyCode', data)
         }
     }, [username, code])
     const register = useCallback(async() => {
         let data: any;
-        if (tab === 0) {
-            data = await user.registerWithAccount(username, password);
-            
+        if (isValidEmail(username)) {
+            data = await RNGizUserManagerModule.forgotWithEmail(username, code, password);
         } else {
-            if (isValidEmail(username)) {
-                data = await user.registerWithEmail(username, password, code);
-            } else {
-                data = await user.registerWithMobile("", username, password, code);
-            }
+            data = await RNGizUserManagerModule.forgotWithMobile("", username,code, password);
         }
         if (data.success) {
             // 返回
@@ -66,30 +60,18 @@ export default observer(({navigation}: any) => {
             width: '100%', 
             justifyContent: 'center',
         }}>
-            <View style={{justifyContent: 'center', marginBottom: 20, alignItems: 'center'}}>
-                <ButtonGroup value={tab} onChange={(v: number) => {
-                    setTab(v)
-                }} options={options}
-                />
-            </View>
             <BaseInput placeholderTextColor="#ddd" placeholder='手机或邮箱' value={username} onChangeText={v => setUsername(v)} autoFocus></BaseInput>
            
-            {
-                tab === 1 && (
-                    <>
-                        <View style={{height: 20}}></View>
-                        <View style={{flexDirection: 'row', justifyContent: 'center',alignItems: 'center'}}>
-                            <BaseInput placeholderTextColor="#ddd" placeholder='验证码' value={code} onChangeText={v => setCode(v)}></BaseInput>
-                            <Button onPress={getCode} style={{width: 80, height: 40, flex: 0}} title="获取"></Button>
-                        </View>
-                    </>
-                )
-            }
+            <View style={{height: 20}}></View>
+            <View style={{flexDirection: 'row', justifyContent: 'center',alignItems: 'center'}}>
+                <BaseInput placeholderTextColor="#ddd" placeholder='验证码' value={code} onChangeText={v => setCode(v)}></BaseInput>
+                <Button onPress={getCode} style={{width: 80, height: 40, flex: 0}} title="获取"></Button>
+            </View>
             <View style={{height: 20}}></View>
             <BaseInput placeholderTextColor="#ddd" placeholder='密码' value={password} onChangeText={v => setPassword(v)}></BaseInput>
             <View style={{paddingHorizontal: 40}}>
                 <Button
-                    title="注册"
+                    title="忘记密码"
                     style={{marginTop: 30}}
                     onPress={async () => {
                         register()

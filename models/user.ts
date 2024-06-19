@@ -34,8 +34,36 @@ class UserModel {
     return data;
   }
   @action
+  async loginWithEmail(email: string, code: string) {
+    const data = await RNGizUserManagerModule.loginWithEmail(email, code);
+    console.log('loginWithAccount', data);
+    this.getAuthorizeData();
+    return data;
+  }
+  @action
+  async loginWithMobile(phoneCode: string, phone: string, code: string) {
+    const data = await RNGizUserManagerModule.loginWithMobile(phoneCode, phone, code);
+    console.log('loginWithAccount', data);
+    this.getAuthorizeData();
+    return data;
+  }
+  @action
   async registerWithAccount(username: string, password: string) {
     const data = await RNGizUserManagerModule.registerWithAccount(username, password);
+    console.log('registerWithAccount', data);
+    this.getAuthorizeData();
+    return data;
+  }
+  @action
+  async registerWithEmail(email: string, password: string, code: string) {
+    const data = await RNGizUserManagerModule.registerWithEmail(email, password, code);
+    console.log('registerWithAccount', data);
+    this.getAuthorizeData();
+    return data;
+  }
+  @action
+  async registerWithMobile(phoneCode: string, phone: string, password: string, code: string) {
+    const data = await RNGizUserManagerModule.registerWithMobile(phoneCode, phone, password, code);
     console.log('registerWithAccount', data);
     this.getAuthorizeData();
     return data;

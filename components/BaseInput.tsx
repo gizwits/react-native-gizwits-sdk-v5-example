@@ -7,8 +7,9 @@ export default ({style, ...other}: TextInputProps) => {
         <TextInput style={[{
             borderRadius: 10,
             backgroundColor: '#fff',
-            width: '100%',
+            flex: 1,
             fontSize: 17,
+            minHeight: 50,
             paddingHorizontal: 14,
             paddingVertical: 12,
         }, style]} {...other}></TextInput>

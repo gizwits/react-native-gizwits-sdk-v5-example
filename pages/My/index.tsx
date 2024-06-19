@@ -52,6 +52,8 @@ const UserInfo = observer(({navigation}: any) => {
     <TouchableOpacity style={styles.userInfoContainer} onPress={() => {
       if (!token) {
         navigation.navigate('登录');
+      } else {
+        navigation.navigate('用户详情');
       }
     }}>
       <Icon name="user"></Icon>

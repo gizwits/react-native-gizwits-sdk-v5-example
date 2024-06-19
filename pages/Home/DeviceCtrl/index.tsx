@@ -134,6 +134,10 @@ export default ({
     }
     keysRef.current.clear();
   }, [data, onSend]);
+
+  useEffect(() => {
+    onSend({devTime: [0,0,0,0,0,0,0,0]})
+  },[])
   return (
     <CollapsibleCard
       right={
