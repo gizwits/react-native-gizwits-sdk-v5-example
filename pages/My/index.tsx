@@ -49,11 +49,13 @@ const UserInfo = observer(({navigation}: any) => {
   const {token} = user;
 
   return (
-    <TouchableOpacity style={styles.userInfoContainer} onPress={() => {
+    <TouchableOpacity style={styles.userInfoContainer} onPress={async() => {
       if (!token) {
         navigation.navigate('登录');
       } else {
-        navigation.navigate('用户详情');
+        // navigation.navigate('用户详情');
+        const data = await user.loginWithAccount("13682503192", "123456");
+        console.log('loginWithAccount', data)
       }
     }}>
       <Icon name="user"></Icon>

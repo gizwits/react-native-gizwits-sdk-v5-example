@@ -56,7 +56,7 @@ class SDKModel {
   };
   deviceListListener = (data: IDevice[]) => {
     data.map(item => {
-      console.log('deviceListListener', item.mqttCapability);
+      // console.log('deviceListListener', item.mqttCapability);
     });
     runInAction(() => {
       this.data = data;

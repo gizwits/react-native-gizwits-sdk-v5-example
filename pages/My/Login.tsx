@@ -52,7 +52,7 @@ export default observer(({navigation}: any) => {
                 data = await user.loginWithMobile("", username, code);
             }
         }
-        console.log('onLogin', data)
+        console.log('onLoginonLoginonLogin', data)
         if (data.success) {
             // 返回
             navigation.goBack();
