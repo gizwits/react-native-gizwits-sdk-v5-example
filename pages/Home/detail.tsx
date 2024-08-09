@@ -1,5 +1,5 @@
 import {observer} from 'mobx-react';
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -52,6 +52,10 @@ const Item = ({name, onPress, active}: any) => {
 export default observer(({route, navigation}: any) => {
   const {id} = route.params as any;
   const device = sdk.data.find(item => item.id === id);
+  useEffect(() => {
+    device?.updateDeviceInfo('A6').then(res => {
+    })
+  }, [])
 
   const [spinner, setSpinner] = useState(false);
   const goToNext = useCallback(

@@ -5856,10 +5856,10 @@ react-native-fs@^2.20.0:
     base-64 "^0.1.0"
     utf8 "^3.0.0"
 
-react-native-gizwits-sdk-v5@^1.4.41:
-  version "1.4.41"
-  resolved "https://registry.npmjs.org/react-native-gizwits-sdk-v5/-/react-native-gizwits-sdk-v5-1.4.41.tgz#03b88f15e4e65c42114b372afa21ca74a8ebd8ec"
-  integrity sha512-kXX2GjhHk7/3veXOWDIM73mKmym88rzz91Pa7gi+ht7J7+ZFVt2mQIHCogi9EWV/3oMbFVkKel3UDFsB25PMRw==
+react-native-gizwits-sdk-v5@^1.4.56:
+  version "1.4.56"
+  resolved "https://registry.npmjs.org/react-native-gizwits-sdk-v5/-/react-native-gizwits-sdk-v5-1.4.56.tgz#92c6ca6bf214f746832c9e979889ff5dc194b56c"
+  integrity sha512-MMUbAF0DDJzjnMQG2hRCFuAwV2cOeP5Hx4xYPkUOHXLvPFvSz59ZrvMzo8kwX5FACQ/e9CEM0vQEKE24CexZeQ==
 
 react-native-iphone-x-helper@^1.3.1:
   version "1.3.1"
